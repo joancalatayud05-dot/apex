@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': 'TU_API_KEY_AQUI',
+          'x-api-key': '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',
           'anthropic-version': '2023-06-01',
           'anthropic-dangerous-request-header': 'true'
         },
