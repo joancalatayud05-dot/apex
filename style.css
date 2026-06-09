@@ -1,0 +1,1222 @@
+/* ── RESET Y VARIABLES ── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #e8001c;
+    --dark: #080808;
+    --dark2: #111111;
+    --light: #f0ede8;
+    --muted: #666666;
+}
+
+body {
+    background: var(--dark);
+    color: var(--light);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    cursor: none;
+}
+
+/* ── NAV ── */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(8, 8, 8, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    color: var(--light);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--light);
+}
+
+/* ── HERO ── */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem 4rem 4rem 4rem;
+    gap: 1.2rem;
+}
+
+.hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s 0.1s ease both;
+}
+
+.hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 14vw, 14rem);
+    line-height: 0.9;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.hero-title .outline {
+    -webkit-text-stroke: 1px rgba(240, 237, 232, 0.6);
+    color: transparent;
+}
+
+.hero-sub {
+    max-width: 420px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--muted);
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s 0.4s ease both;
+}
+
+.hero-stats {
+    position: absolute;
+    bottom: 4rem;
+    right: 4rem;
+    display: flex;
+    gap: 3rem;
+    z-index: 2;
+    animation: fadeUp 0.8s 0.5s ease both;
+}
+
+.stat {
+    text-align: right;
+}
+
+.stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--muted);
+    line-height: 1;
+}
+
+.stat-num span {
+    font-size: 1.2rem;
+    color: var(--red);
+    margin-left: 2px;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+/* ── BOTONES ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 2.5rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--red);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #ff1a33;
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--muted);
+}
+
+.btn-ghost:hover {
+    border-color: var(--red);
+    color: var(--light);
+}
+
+/* ── HERO CAR ── */
+.hero-car {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    height: 85%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero-car img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.45;
+    animation: fadeUp 1s 0.5s ease both;
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 45%,
+            black 100%),
+        linear-gradient(to top,
+            transparent 0%,
+            black 25%,
+            black 100%);
+    -webkit-mask-composite: destination-in;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 45%,
+            black 100%),
+        linear-gradient(to top,
+            transparent 0%,
+            black 25%,
+            black 100%);
+    mask-composite: intersect;
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--dark2);
+    padding: 1.25rem 0;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.marquee-item:hover {
+    color: var(--light);
+}
+
+.marquee-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+}
+
+/* ── GARAGE ── */
+.garage {
+    padding: 8rem 4rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.section-eyebrow {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.95;
+}
+
+.section-count {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    color: rgba(255, 255, 255, 0.04);
+    line-height: 1;
+    user-select: none;
+}
+
+/* ── CARDS ── */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--dark2);
+}
+
+.card-large {
+    grid-column: span 2;
+    aspect-ratio: unset;
+    min-height: 600px;
+}
+
+.card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(20%) brightness(0.7);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.8s ease;
+}
+
+.card:hover .card-bg {
+    transform: scale(1.08);
+    filter: grayscale(0%) brightness(0.6);
+}
+
+.card-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 8, 8, 0.95) 0%, rgba(8, 8, 8, 0.3) 50%, transparent 100%);
+}
+
+.card-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .card-accent {
+    width: 100%;
+}
+
+.card-tag {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--muted);
+    background: rgba(8, 8, 8, 0.4);
+    transition: all 0.3s;
+}
+
+.card:hover .card-tag {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.card-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+}
+
+.card-brand {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+    transform: translateY(8px);
+    transition: transform 0.4s;
+}
+
+.card:hover .card-brand {
+    transform: translateY(0);
+}
+
+.card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    line-height: 1;
+    transform: translateY(8px);
+    transition: transform 0.4s 0.05s;
+}
+
+.card-large .card-name {
+    font-size: 5rem;
+}
+
+.card:hover .card-name {
+    transform: translateY(0);
+}
+
+.card-specs {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s 0.1s;
+}
+
+.card:hover .card-specs {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.spec-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--light);
+    line-height: 1;
+}
+
+.spec-val small {
+    font-size: 0.9rem;
+    color: var(--red);
+}
+
+.spec-key {
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+/* ── FEATURES ── */
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.feature {
+    background: var(--dark);
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+}
+
+.feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--red);
+    transition: height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.feature:hover::before {
+    height: 3px;
+}
+
+.feature:hover {
+    background: var(--dark2);
+}
+
+.feature-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+    margin-bottom: 2rem;
+    transition: color 0.4s;
+}
+
+.feature:hover .feature-num {
+    color: rgba(232, 0, 28, 0.1);
+}
+
+.feature-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.feature-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* ── FOOTER ── */
+footer {
+    padding: 3rem 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--light);
+}
+
+.footer-copy {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-text {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+}
+
+/* ── CURSOR ── */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(232, 0, 28, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    transition: width 0.15s ease, height 0.15s ease, border-color 0.15s ease;
+}
+
+.cursor-ring.hovered {
+    width: 56px;
+    height: 56px;
+    border-color: var(--red);
+}
+
+/* ── ANIMACIONES ── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ── TACÓMETRO ── */
+.tachometro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem;
+    gap: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tacho-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tacho-sub {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 380px;
+}
+
+.tacho-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+
+.tacho-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--light);
+    line-height: 1;
+}
+
+.tacho-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.tacho-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tacho-svg {
+    width: 100%;
+    max-width: 300px;
+    overflow: visible;
+}
+
+/* ── INTRO ── */
+.intro {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.intro.oculto {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+.intro-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    letter-spacing: 0.15em;
+    color: #f0ede8;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.intro-logo span {
+    color: #e8001c;
+}
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    background: #e8001c;
+    animation: expandLine 0.8s 0.8s ease both;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 200px;
+    }
+}
+
+/* ── COMPARADOR ── */
+.comparador {
+    padding: 8rem 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.comparador-selectores {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.comp-select {
+    flex: 1;
+    background: var(--dark2);
+    color: var(--light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    appearance: none;
+}
+
+.comp-select:focus {
+    outline: none;
+    border-color: var(--red);
+}
+
+.comp-vs {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--red);
+    flex-shrink: 0;
+}
+
+.comp-placeholder {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4rem 0;
+}
+
+.comp-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+
+.comp-nombres {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.comp-nombre {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.comp-nombre.izq {
+    text-align: right;
+}
+
+.comp-nombre.der {
+    text-align: left;
+}
+
+.comp-nombre small {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.3rem;
+}
+
+.comp-separador {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comp-bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.comp-label {
+    text-align: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.comp-fila {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.comp-valor-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.comp-valor-wrap.izq {
+    flex-direction: row-reverse;
+}
+
+.comp-valor {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--light);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.comp-valor small {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.comp-valor.ganador {
+    color: var(--red);
+}
+
+.comp-valor.ganador small {
+    color: var(--red);
+}
+
+.comp-barra-wrap {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+.comp-barra {
+    height: 100%;
+    background: var(--red);
+    width: 0;
+    transition: width 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.comp-centro {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.1);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+}
+
+/* ── EASTER EGG ── */
+#easter-egg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeUp 0.4s ease both;
+}
+
+.egg-contenido {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.egg-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem;
+    letter-spacing: 0.15em;
+    animation: fadeUp 0.6s 0.2s ease both;
+    opacity: 0;
+}
+
+.egg-logo span {
+    color: var(--red);
+}
+
+.egg-texto {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    color: var(--light);
+    animation: fadeUp 0.6s 0.4s ease both;
+    opacity: 0;
+}
+
+.egg-sub {
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    animation: fadeUp 0.6s 0.6s ease both;
+    opacity: 0;
+}
+
+.egg-btn {
+    margin-top: 1rem;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background 0.3s;
+    animation: fadeUp 0.6s 0.8s ease both;
+    opacity: 0;
+}
+
+.egg-btn:hover {
+    background: #ff1a33;
+}
+
+/* ── CONFETI ── */
+.confeti {
+    position: fixed;
+    top: -20px;
+    border-radius: 2px;
+    z-index: 100000;
+    animation: caerConfeti linear both;
+    pointer-events: none;
+}
+
+@keyframes caerConfeti {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.intro-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--muted);
+    padding: 0.75rem 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: fadeUp 0.8s 1.2s ease both;
+    opacity: 0;
+}
+
+.intro-btn:hover {
+    border-color: var(--red);
+    color: var(--light);
+}
+
+/* ── MODO LLUVIA ── */
+.gota {
+    position: fixed;
+    top: -20px;
+    width: 1.5px;
+    background: linear-gradient(to bottom, transparent, rgba(180, 220, 255, 0.6));
+    pointer-events: none;
+    z-index: 9997;
+    animation: caerGota linear both;
+  }
+  
+  @keyframes caerGota {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(110vh); opacity: 0; }
+  }
+  
+  body.lluvia .hero-car img {
+    filter: blur(1px);
+    transition: filter 0.5s ease;
+  }
+  
+  body:not(.lluvia) .hero-car img {
+    filter: blur(0px);
+    transition: filter 0.5s ease;
+  }
+
+/* ── EFECTO VELOCIDAD ── */
+#velocidad-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9996;
+    pointer-events: none;
+  }
+
+  /* ── MODO CONDUCCIÓN ── */
+body.conduccion {
+    transform-origin: center center;
+  }
+  
+  #conduccion-indicador {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--red);
+    z-index: 9996;
+    animation: fadeUp 0.4s ease both;
+    pointer-events: none;
+  }
+
+  /* ── MECÁNICO IA ── */
+.mecanico {
+    padding: 8rem 4rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  
+  .mecanico-wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  .mecanico-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  
+  .mecanico-ejemplos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .ejemplo {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.3s;
+    line-height: 1.4;
+  }
+  
+  .ejemplo:hover {
+    border-color: var(--red);
+    color: var(--light);
+  }
+  
+  .mecanico-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 500px;
+  }
+  
+  .chat-mensajes {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.06);
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) transparent;
+  }
+  
+  .chat-msg {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .chat-msg.usuario {
+    align-items: flex-end;
+  }
+  
+  .chat-autor {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: var(--red);
+  }
+  
+  .chat-msg p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--light);
+    max-width: 85%;
+  }
+  
+  .chat-msg.usuario p {
+    color: var(--muted);
+    text-align: right;
+  }
+  
+  .chat-msg.cargando p {
+    color: var(--muted);
+    font-style: italic;
+  }
+  
+  .chat-input-wrap {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .chat-input {
+    flex: 1;
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--light);
+    padding: 1rem 1.5rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.3s;
+    cursor: text;
+  }
+  
+  .chat-input:focus {
+    border-color: var(--red);
+  }
+  
+  .chat-input::placeholder {
+    color: var(--muted);
+  }
+  
+  .chat-btn {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .chat-btn:hover { background: #ff1a33; }
+  .chat-btn:disabled {
+    background: var(--muted);
+    cursor: not-allowed;
+  }

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX - Car ShowCase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="intro" id="intro">
+  <div class="intro-logo">AP<span>E</span>X</div>
+  <div class="intro-line"></div>
+  <button class="intro-btn" id="intro-btn">ENTRAR</button>
+</div>
+
+    <div id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <nav>
+        <a href="#" class="logo">AP<span>E</span>X</a>
+        <ul class="nav-links">
+            <li><a href="#garage">Garage</a></li>
+            <li><a href="#specs">Specs</a></li>
+            <li><a href="#tachometro">Rendimiento</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+
+        <p class="hero-eyebrow">// Coleccion 2025 - Valencia, España</p>
+
+        <h1 class="hero-title">
+            PURE <br>
+            <span class="outline">SPEED</span>
+        </h1>
+
+        <p class="hero-sub">
+            Donde la ingeniería alcanza su forma más pura.
+            Cada curva tiene una razón, Cada segundo, una historia.
+        </p>
+
+        <div class="hero-cta">
+            <a href="#garage" class="btn btn-primary">Ver Garage ↓</a>
+            <a href="#specs" class="btn btn-ghost">Especificaciones →</a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-num">420<span>km/h</span></div>
+                <div class="stat-label">Velocidad Máx</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">2.4<span>s</span></div>
+                <div class="stat-label">0–100 km/h</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">1500<span>cv</span></div>
+                <div class="stat-label">Potencia</div>
+            </div>
+        </div>
+
+        <div class="hero-car">
+            <img src="imagenes/Bugatti-Chiron-Hero.jpg" alt="Coche hero">
+        </div>
+
+    </section>
+
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span class="marquee-item"><span class="marquee-dot"></span>Ferrari</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Lamborghini</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Porsche</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>McLaren</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Bugatti</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Aston Martin</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Pagani</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Koenigsegg</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Ferrari</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Lamborghini</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Porsche</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>McLaren</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Bugatti</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Aston Martin</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Pagani</span>
+            <span class="marquee-item"><span class="marquee-dot"></span>Koenigsegg</span>
+        </div>
+    </div>
+
+    <section class="garage" id="garage">
+
+        <div class="section-header">
+            <div>
+                <span class="section-eyebrow">// 01 — Garage</span>
+                <h2 class="section-title">MÁQUINAS<br>LEGENDARIAS</h2>
+            </div>
+            <div class="section-count">05</div>
+        </div>
+
+        <div class="cars-grid">
+
+            <div class="card card-large reveal" data-nombre="SF90 Stradale" data-marca="Ferrari" data-cv="1000"
+                data-velocidad="340" data-cero="2.5" data-imagen="imagenes/SF90.jpg">
+                <div class="card-bg" style="background-image: url('imagenes/SF90.jpg')"></div>
+                <div class="card-gradient"></div>
+                <div class="card-accent"></div>
+                <span class="card-tag">Edición Limitada</span>
+                <div class="card-content">
+                    <div class="card-brand">Ferrari</div>
+                    <div class="card-name">SF90 Stradale</div>
+                    <div class="card-specs">
+                        <div class="spec-item">
+                            <div class="spec-val">1000<small>cv</small></div>
+                            <div class="spec-key">Potencia</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">2.5<small>s</small></div>
+                            <div class="spec-key">0–100</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">340<small>km/h</small></div>
+                            <div class="spec-key">Vmax</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" data-nombre="911 GT3 RS" data-marca="Porsche" data-cv="525" data-velocidad="318"
+                data-cero="3.2" data-imagen="imagenes/911RS.jpg">
+                <div class="card-bg" style="background-image: url('imagenes/911RS.jpg')"></div>
+                <div class="card-gradient"></div>
+                <div class="card-accent"></div>
+                <span class="card-tag">Icono</span>
+                <div class="card-content">
+                    <div class="card-brand">Porsche</div>
+                    <div class="card-name">911 GT3 RS</div>
+                    <div class="card-specs">
+                        <div class="spec-item">
+                            <div class="spec-val">525<small>cv</small></div>
+                            <div class="spec-key">Potencia</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">3.2<small>s</small></div>
+                            <div class="spec-key">0–100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" data-nombre="Huracán" data-marca="Lamborghini" data-cv="640" data-velocidad="325"
+                data-cero="2.9" data-imagen="imagenes/Huracan.jpg">
+                <div class="card-bg" style="background-image: url('imagenes/Huracan.jpg')"></div>
+                <div class="card-gradient"></div>
+                <div class="card-accent"></div>
+                <span class="card-tag">Bestia</span>
+                <div class="card-content">
+                    <div class="card-brand">Lamborghini</div>
+                    <div class="card-name">Huracán</div>
+                    <div class="card-specs">
+                        <div class="spec-item">
+                            <div class="spec-val">640<small>cv</small></div>
+                            <div class="spec-key">Potencia</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">2.9<small>s</small></div>
+                            <div class="spec-key">0–100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" data-nombre="720S" data-marca="McLaren" data-cv="720" data-velocidad="341"
+                data-cero="2.8" data-imagen="imagenes/McLaren 720s.jpg">
+                <div class="card-bg" style="background-image: url('imagenes/McLaren 720s.jpg')"></div>
+                <div class="card-gradient"></div>
+                <div class="card-accent"></div>
+                <span class="card-tag">Clásico</span>
+                <div class="card-content">
+                    <div class="card-brand">McLaren</div>
+                    <div class="card-name">720S</div>
+                    <div class="card-specs">
+                        <div class="spec-item">
+                            <div class="spec-val">720<small>cv</small></div>
+                            <div class="spec-key">Potencia</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">2.8<small>s</small></div>
+                            <div class="spec-key">0–100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" data-nombre="Chiron Divo" data-marca="Bugatti" data-cv="1500" data-velocidad="420"
+                data-cero="2.4" data-imagen="imagenes/Bugatti Chiron.jpeg">
+                <div class="card-bg" style="background-image: url('imagenes/Bugatti Chiron.jpeg')"></div>
+                <div class="card-gradient"></div>
+                <div class="card-accent"></div>
+                <span class="card-tag">Élite</span>
+                <div class="card-content">
+                    <div class="card-brand">Bugatti</div>
+                    <div class="card-name">Chiron Divo</div>
+                    <div class="card-specs">
+                        <div class="spec-item">
+                            <div class="spec-val">1500<small>cv</small></div>
+                            <div class="spec-key">Potencia</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">2.4<small>s</small></div>
+                            <div class="spec-key">0–100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="features" id="specs">
+        <div class="feature reveal">
+            <div class="feature-num">01</div>
+            <div class="feature-title">Aerodinámica Activa</div>
+            <div class="feature-text">Sistemas de downforce que se adaptan en milisegundos a las condiciones de
+                velocidad y trazada.</div>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-num">02</div>
+            <div class="feature-title">Motor de Competición</div>
+            <div class="feature-text">Derivado directamente de la pista. Sin filtros. Sin concesiones. Solo rendimiento
+                puro.</div>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-num">03</div>
+            <div class="feature-title">Chasis de Carbono</div>
+            <div class="feature-text">Estructura monocasco ultraligera que optimiza la rigidez torsional sin comprometer
+                el peso.</div>
+        </div>
+        <div class="feature reveal">
+            <div class="feature-num">04</div>
+            <div class="feature-title">Telemetría en Tiempo Real</div>
+            <div class="feature-text">Más de 200 sensores monitorizan cada componente del vehículo a 1000Hz de
+                frecuencia.</div>
+        </div>
+    </div>
+
+    <section class="tachometro" id="tachometro">
+        <div class="tacho-left">
+            <span class="section-eyebrow">// 02 — Rendimiento</span>
+            <h2 class="section-title">LÍMITES<br>DEL ASFALTO</h2>
+            <p class="tacho-sub">Cada número es el resultado de décadas de ingeniería llevada al extremo absoluto.</p>
+            <div class="tacho-stats">
+                <div class="tacho-stat">
+                    <div class="tacho-num" id="tacho-cv">0</div>
+                    <div class="tacho-label">Caballos</div>
+                </div>
+                <div class="tacho-stat">
+                    <div class="tacho-num" id="tacho-cero">0.0</div>
+                    <div class="tacho-label">0–100 km/h</div>
+                </div>
+            </div>
+        </div>
+        <div class="tacho-right">
+            <svg class="tacho-svg" viewBox="-20 -20 340 320" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 30 250 A 120 120 0 1 1 270 250" fill="none" stroke="rgba(255,255,255,0.06)"
+                    stroke-width="12" stroke-linecap="round" />
+                <path id="tacho-arco" d="M 30 250 A 120 120 0 1 1 270 250" fill="none" stroke="#e8001c"
+                    stroke-width="12" stroke-linecap="round" stroke-dasharray="0 1000" />
+                <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
+                    <line x1="150" y1="32" x2="150" y2="48" transform="rotate(-210 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="42" transform="rotate(-180 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="48" transform="rotate(-150 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="42" transform="rotate(-120 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="48" transform="rotate(-90 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="42" transform="rotate(-60 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="48" transform="rotate(-30 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="42" transform="rotate(0 150 150)" />
+                    <line x1="150" y1="32" x2="150" y2="48" transform="rotate(30 150 150)" />
+                </g>
+                <line id="tacho-aguja" x1="150" y1="150" x2="150" y2="45" stroke="#e8001c" stroke-width="2"
+                    stroke-linecap="round" style="transform-origin: 150px 150px; transform: rotate(-120deg);" />
+                <circle cx="150" cy="150" r="8" fill="#e8001c" />
+                <circle cx="150" cy="150" r="4" fill="#080808" />
+                <text id="tacho-velocidad" x="150" y="195" text-anchor="middle" fill="#f0ede8"
+                    font-family="Bebas Neue" font-size="36" letter-spacing="2">0</text>
+                <text x="150" y="215" text-anchor="middle" fill="#666" font-family="Bebas Neue" font-size="12"
+                    letter-spacing="4">KM/H</text>
+            </svg>
+        </div>
+    </section>
+
+    <section class="comparador" id="comparador">
+        <div class="section-header">
+            <div>
+                <span class="section-eyebrow">// 03 — Comparador</span>
+                <h2 class="section-title">FRENTE<br>A FRENTE</h2>
+            </div>
+            <div class="section-count">VS</div>
+        </div>
+        <div class="comparador-selectores">
+            <select class="comp-select" id="select-a">
+                <option value="">— Elige un coche —</option>
+                <option value="Ferrari|SF90 Stradale|1000|340|2.5">Ferrari SF90 Stradale</option>
+                <option value="Porsche|911 GT3 RS|525|318|3.2">Porsche 911 GT3 RS</option>
+                <option value="Lamborghini|Huracán|640|325|2.9">Lamborghini Huracán</option>
+                <option value="McLaren|720S|720|341|2.8">McLaren 720S</option>
+                <option value="Bugatti|Chiron Divo|1500|420|2.4">Bugatti Chiron Divo</option>
+            </select>
+            <div class="comp-vs">VS</div>
+            <select class="comp-select" id="select-b">
+                <option value="">— Elige un coche —</option>
+                <option value="Ferrari|SF90 Stradale|1000|340|2.5">Ferrari SF90 Stradale</option>
+                <option value="Porsche|911 GT3 RS|525|318|3.2">Porsche 911 GT3 RS</option>
+                <option value="Lamborghini|Huracán|640|325|2.9">Lamborghini Huracán</option>
+                <option value="McLaren|720S|720|341|2.8">McLaren 720S</option>
+                <option value="Bugatti|Chiron Divo|1500|420|2.4">Bugatti Chiron Divo</option>
+            </select>
+        </div>
+        <div class="comparador-resultado" id="comp-resultado">
+            <p class="comp-placeholder">Selecciona dos coches para comparar</p>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <a href="#" class="logo">AP<span>E</span>X</a>
+        <div class="footer-center">
+            <ul class="footer-links">
+                <li><a href="#garage">Garage</a></li>
+                <li><a href="#specs">Specs</a></li>
+                <li><a href="#tachometro">Rendimiento</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <p class="footer-copy">© 2025 APEX Automotive — Valencia, España</p>
+        </div>
+        <div class="footer-right">
+            <p class="footer-text">Hecho con HTML + CSS puro</p>
+        </div>
+
+        <section class="mecanico" id="mecanico">
+            <div class="section-header">
+              <div>
+                <span class="section-eyebrow">// 04 — IA</span>
+                <h2 class="section-title">EL<br>MECÁNICO</h2>
+              </div>
+              <div class="section-count">AI</div>
+            </div>
+          
+            <div class="mecanico-wrap">
+              <div class="mecanico-info">
+                <p class="mecanico-desc">Pregúntale cualquier cosa al mecánico de APEX. Specs, historia, comparativas, curiosidades sobre cualquier superdeportivo.</p>
+                <div class="mecanico-ejemplos">
+                  <span class="ejemplo" onclick="usarEjemplo(this)">¿Cuál es más rápido, el Chiron o el Koenigsegg Jesko?</span>
+                  <span class="ejemplo" onclick="usarEjemplo(this)">¿Por qué el motor del McLaren F1 tiene 3 asientos?</span>
+                  <span class="ejemplo" onclick="usarEjemplo(this)">Explícame cómo funciona el KERS de la F1</span>
+                  <span class="ejemplo" onclick="usarEjemplo(this)">¿Qué hace especial al Porsche 911 GT3 RS?</span>
+                </div>
+              </div>
+          
+              <div class="mecanico-chat">
+                <div class="chat-mensajes" id="chat-mensajes">
+                  <div class="chat-msg asistente">
+                    <span class="chat-autor">MECÁNICO</span>
+                    <p>Buenas. Soy el mecánico de APEX. Pregúntame lo que quieras sobre coches, motores, circuitos o cualquier superdeportivo. Estoy aquí para eso.</p>
+                  </div>
+                </div>
+                <div class="chat-input-wrap">
+                  <input type="text" class="chat-input" id="chat-input" placeholder="Pregunta algo al mecánico...">
+                  <button class="chat-btn" id="chat-btn">ENVIAR</button>
+                </div>
+              </div>
+            </div>
+          </section>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
