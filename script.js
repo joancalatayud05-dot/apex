@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const velocidadMax = 420;
   const cvMax        = 1500;
   const ceroMax      = 2.4;
-  const longitudArco = 534;
+  const longitudArco = 408;
 
   function animarTacho() {
     if (tachoAnimado) return;
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const progreso = Math.min(elapsed / duracion, 1);
       const eased    = 1 - Math.pow(1 - progreso, 3);
 
-      tachoAguja.style.transform      = `rotate(${-120 + eased * 240}deg)`;
+      tachoAguja.style.transform      = `rotate(${-90 + eased * 180}deg)`;
       tachoArco.style.strokeDasharray = `${longitudArco * eased} ${longitudArco}`;
       tachoVelocidad.textContent      = Math.round(eased * velocidadMax);
       tachoCv.textContent             = Math.round(eased * cvMax);
